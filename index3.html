@@ -538,6 +538,54 @@
         .shape-3 {
             animation: floatAnimation 12s ease-in-out infinite 2s;
         }
+
+        /* Project Write-up / FAQ Section */
+        .project-writeup {
+            background-color: var(--beige);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        .project-writeup h3 {
+            font-size: 1.6rem;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+        }
+
+        .project-writeup .project-subtitle {
+            font-size: 1rem;
+            color: var(--brown);
+            margin-bottom: 20px;
+        }
+
+        .project-writeup p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--dark-brown);
+        }
+
+        .faq-block {
+            background-color: var(--cream);
+            border-left: 4px solid var(--brown);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-top: 25px;
+        }
+
+        .faq-block h4 {
+            font-size: 1.1rem;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-block p {
+            margin-bottom: 0;
+            font-size: 0.97rem;
+        }
     </style>
 </head>
 <body>
@@ -620,12 +668,12 @@
                 <!-- Portfolio Item 1 -->
                 <div class="portfolio-item fadeIn">
                     <div class="portfolio-image">
-                        <img src="/api/placeholder/500/400" alt="Project 1">
+                        <img src="/api/placeholder/500/400" alt="Smart Environmental Control System">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Project One</h3>
-                        <p class="portfolio-category">Web Design / Development</p>
-                        <a href="#" class="portfolio-link">View Project</a>
+                        <h3 class="portfolio-title">Smart Environmental Control System</h3>
+                        <p class="portfolio-category">Arduino / Embedded Systems</p>
+                        <a href="#smart-env-writeup" class="portfolio-link">Read More</a>
                     </div>
                 </div>
                 
@@ -665,10 +713,46 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Smart Environmental Control System — Project Write-up -->
+            <div class="project-writeup fadeIn" id="smart-env-writeup">
+                <h3>🌡️ Smart Environmental Control System</h3>
+                <p class="project-subtitle">Arduino · Sensors · Bluetooth · Automated Control</p>
+                <p>
+                    This project uses an Arduino to monitor environmental conditions — such as temperature and soil moisture —
+                    and automatically control outputs like a water pump or fan to keep conditions within set thresholds.
+                    It supports both a fully automated hardware mode and a hybrid mode where settings can be adjusted
+                    wirelessly from a phone or PC.
+                </p>
+
+                <!-- FAQ: What is the Bluetooth module for? -->
+                <div class="faq-block">
+                    <h4>❓ What is the Bluetooth module for?</h4>
+                    <p>
+                        The Bluetooth module (e.g., HC-05) lets the Arduino talk wirelessly to your phone or computer.
+                        It does two things:
+                    </p>
+                    <ul style="margin: 10px 0 0 20px; line-height: 1.8; color: var(--dark-brown);">
+                        <li>
+                            <strong>Sending data out:</strong> it streams live sensor readings (like temperature and moisture levels)
+                            and system status to a Bluetooth serial app on your phone or PC, so you can monitor what's
+                            happening without being plugged in by USB.
+                        </li>
+                        <li>
+                            <strong>Receiving commands:</strong> you can send control commands or new threshold values wirelessly —
+                            for example, changing the temperature limit that triggers the fan or pump —
+                            without touching the Arduino or re-uploading code.
+                        </li>
+                    </ul>
+                    <p style="margin-top: 12px;">
+                        In the <em>hybrid process</em>, the Arduino can also receive a temperature value over
+                        Bluetooth/Serial from an external source (like a PC) and use that reading to make
+                        control decisions, which is handy when you want to test or override the built-in sensor.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
             <h2 class="section-title fadeIn">Get In Touch</h2>
